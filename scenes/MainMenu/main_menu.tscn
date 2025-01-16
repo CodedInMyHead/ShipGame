@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://rdeliabiftkf"]
+[gd_scene load_steps=3 format=3 uid="uid://rdeliabiftkf"]
 
-[ext_resource type="Texture2D" uid="uid://5xthuqaupi4h" path="res://icon.svg" id="1_tacrc"]
+[ext_resource type="Texture2D" uid="uid://d1f1srjw2jod8" path="res://assets/sprites/UI assets/MainMenu assets/MainMenuBackgroundPlaceHolder.png" id="1_bbk3n"]
+[ext_resource type="Script" path="res://scenes/MainMenu/background.gd" id="2_tfh6x"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -16,8 +17,13 @@ anchors_preset = -1
 anchor_left = -1.0
 anchor_right = 2.0
 anchor_bottom = 1.0
+offset_top = -1404.0
+offset_bottom = 1404.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_tacrc")
+texture = ExtResource("1_bbk3n")
+expand_mode = 4
+stretch_mode = 5
+script = ExtResource("2_tfh6x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect"]
