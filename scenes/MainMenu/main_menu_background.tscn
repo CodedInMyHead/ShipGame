@@ -63,9 +63,8 @@ sprite_frames = SubResource("SpriteFrames_ql1go")
 animation = &"BackgroundAnimation"
 autoplay = "BackgroundAnimation"
 frame = 6
-frame_progress = 0.972484
+frame_progress = 0.880818
 
 [node name="MainMenuCamera" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 script = ExtResource("2_pqf75")
-current_possition = 0

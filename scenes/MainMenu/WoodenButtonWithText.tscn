@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://cyfgaxjg28mjq"]
+
+[ext_resource type="Texture2D" uid="uid://cpnf5g2bseert" path="res://assets/sprites/UI assets/MainMenu assets/WoodenButtonSpriteSheet.png" id="1_fyuhu"]
+[ext_resource type="Script" path="res://scripts/UI scripts/wooden_button_with_text.gd" id="2_e84j6"]
+[ext_resource type="FontFile" uid="uid://cx4u8y47dt4hj" path="res://assets/fonts/Berry Rotunda.ttf" id="2_x1jvj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldhfy"]
+atlas = ExtResource("1_fyuhu")
+region = Rect2(0, 0, 50, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxeyn"]
+atlas = ExtResource("1_fyuhu")
+region = Rect2(0, 36, 50, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slksc"]
+atlas = ExtResource("1_fyuhu")
+region = Rect2(0, 18, 50, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lx6hg"]
+atlas = ExtResource("1_fyuhu")
+region = Rect2(0, 54, 50, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iynvy"]
+atlas = ExtResource("1_fyuhu")
+region = Rect2(0, 72, 50, 18)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p68e1"]
+font = ExtResource("2_x1jvj")
+font_size = 32
+font_color = Color(0.841959, 0.839842, 1.15514e-06, 1)
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="TextureButton" type="TextureButton"]
+custom_minimum_size = Vector2(50, 18)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.5
+offset_top = -68.0
+offset_right = 188.5
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_ldhfy")
+texture_pressed = SubResource("AtlasTexture_nxeyn")
+texture_hover = SubResource("AtlasTexture_slksc")
+texture_disabled = SubResource("AtlasTexture_lx6hg")
+texture_focused = SubResource("AtlasTexture_iynvy")
+stretch_mode = 5
+script = ExtResource("2_e84j6")
+hovered_scale_factor = 1.1
+pressed_scale_factor = 0.9
+disabled_scale_fator = 0.8
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sample Text"
+label_settings = SubResource("LabelSettings_p68e1")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
