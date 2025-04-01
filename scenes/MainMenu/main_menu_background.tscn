@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://b6rx6vlni86jd"]
+
+[ext_resource type="Texture2D" uid="uid://dant7v8ofqnuu" path="res://assets/sprites/UI assets/MainMenu assets/MainMenuBackgroundPlaceHolderV2SpriteSheet.png" id="1_texp4"]
+[ext_resource type="Script" path="res://scripts/UI scripts/MainMenuCamera.gd" id="2_pqf75"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdib7"]
+atlas = ExtResource("1_texp4")
+region = Rect2(0, 0, 960, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpyqa"]
+atlas = ExtResource("1_texp4")
+region = Rect2(0, 180, 960, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmigl"]
+atlas = ExtResource("1_texp4")
+region = Rect2(0, 360, 960, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhhfc"]
+atlas = ExtResource("1_texp4")
+region = Rect2(0, 540, 960, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o8tv"]
+atlas = ExtResource("1_texp4")
+region = Rect2(0, 720, 960, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ql1go"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdib7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpyqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmigl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhhfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8o8tv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhhfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmigl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpyqa")
+}],
+"loop": true,
+"name": &"BackgroundAnimation",
+"speed": 5.0
+}]
+
+[node name="MainMenuBackground" type="Node2D"]
+
+[node name="BackgroundAnimation" type="AnimatedSprite2D" parent="."]
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_ql1go")
+animation = &"BackgroundAnimation"
+autoplay = "BackgroundAnimation"
+frame = 6
+frame_progress = 0.880818
+
+[node name="MainMenuCamera" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+script = ExtResource("2_pqf75")
